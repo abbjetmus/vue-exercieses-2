@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <!-- Ta inte bort det här skriptet -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- Lägg din html innanför div-taggen med id="app" -->
+    <div id="app">
+        <h1>Pi has the value {{pi}}</h1>
+        <h1>E has the value {{e}}</h1>
+    </div>
+
+    <!-- Lägg din javascript innanför script-taggen -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                pi: 3.14,
+                e: 2.71
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <!-- Ta inte bort det här skriptet -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- Lägg din html innanför div-taggen med id="app" -->
+    <div id="app">
+        <h1 v-if="selectedPolitician">
+            {{selectedPolitician.party}}</h1>
+        <politician-item-component v-for="politician in politicianList" @getpolitician="showPolitician"
+            :politician="politician" :key="politician.id">
+        </politician-item-component>
+    </div>
+
+    <!-- Lägg din javascript innanför script-taggen -->
+    <script>
+        var PolitikerItemComponent = {
+            template: `
+                <h1>{{politician.firstName}} {{politician.lastName}} <button @click="skicka">Show Party</button></h1>
+            `,
+            props: ['politician'],
+            methods: {
+                skicka() {
+                    this.$emit('getpolitician', this.politician)
+                }
+            }
+        }
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                PoliticianItemComponent
+            },
+            data: {
+                selectedPolitician: null,
+                politicianList: [
+                    { id: 1, firstName: 'Stefan', lastName: 'Löven', party: 'Socialdemokraterna' },
+                    { id: 2, firstName: 'Annie', lastName: 'Lööv', party: 'Centerpartiet' },
+                    { id: 3, firstName: 'Nyamko', lastName: 'Sabuni', party: 'Liberalerna' },
+                    { id: 4, firstName: 'Jimmie', lastName: 'Åkesson', party: 'Sverigedemokraterna' },
+                    { id: 5, firstName: 'Per', lastName: 'Bolund', party: 'Mijlöpartiet' },
+                ]
+            },
+            methods: {
+                showPolitician(value) {
+                    this.selectedPolitician = value
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

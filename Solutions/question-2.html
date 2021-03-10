@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <!-- Ta inte bort det här skriptet -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- Lägg din html innanför div-taggen med id="app" -->
+    <div id="app">
+        <ul>
+            <li v-for="student in students" :key="student.id">{{student.name}}</li>
+        </ul>
+    </div>
+
+    <!-- Lägg din javascript innanför script-taggen -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                students: [
+                    { id: 1, name: 'Kalle' },
+                    { id: 2, name: 'Pelle' },
+                    { id: 3, name: 'Nalle' }
+                ]
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <!-- Ta inte bort det här skriptet -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- Lägg din html innanför div-taggen med id="app" -->
+    <div id="app">
+        <BodyComponent>
+            <h1 slot="head">Head</h1>
+            <h1 slot="shoulder">Shoulders</h1>
+            <h1 slot="knee">Knee</h1>
+            <h1 slot="toe">Toe</h1>
+        </BodyComponent>
+    </div>
+
+    <!-- Lägg din javascript innanför script-taggen -->
+    <script>
+        var BodyComponent = {
+            template: `
+                <div>
+                <slot name="head"></slot>
+                <slot name="shoulder"></slot>
+                <slot name="knee"></slot>
+                <slot name="toe"></slot>
+                </div>
+            `
+        }
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                BodyComponent
+            },
+            data: {
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>
