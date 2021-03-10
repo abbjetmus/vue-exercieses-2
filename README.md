@@ -1,7 +1,7 @@
 # vue-exercieses
 Start by cloning the project at:
 <br>
-`git clone https://github.com/abbjetmus/vue-prov-2020-12-08.git`
+`git clone https://github.com/abbjetmus/vue-exercieses-2.git`
 <br>
 ## To think about
 
