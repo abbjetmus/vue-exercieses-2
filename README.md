@@ -1,4 +1,4 @@
-# vue-exercieses
+# vue-exercieses-2
 Start by cloning the project at:
 <br>
 `git clone https://github.com/abbjetmus/vue-exercieses-2.git`
